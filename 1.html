@@ -1,0 +1,57 @@
+
+<!DOCTYPE HTML>
+<html>
+    <head>		
+        <title>Страничка С.Д. Мостового</title>
+
+        <link rel="stylesheet" href="https://adinf.com/smostovoy/default.css">
+    </head>
+
+    <body>
+        <div id="outer">
+            <!--<div id="header">
+                <h1>Материалы к занятиям <a href="https://istina.msu.ru/profile/smostovoy/">С.Д. Мостового</a></h1>
+                <h3><a href="http://bogolubov.phys.msu.ru/">Кафедра квантовой статистики и теории поля</a></h3>
+                <h3><a href="https://phys.msu.ru/">Физический факультет МГУ имени М.В. Ломоносова</a></h3>
+            </div>
+
+            <div id="menu">
+        
+		<hr>
+	&emsp;&emsp;&emsp;    <a href="index.php" class=inactive >Новости</a>&emsp;&emsp;&emsp;    <a href="course_stat.php" class=inactive >Курсы</a>&emsp;&emsp;&emsp;    <a href="timetable.php" class=inactive >Расписание</a>&emsp;&emsp;&emsp;    <a href="sciwork.php" class=inactive >Научная&nbsp;работа</a>&emsp;&emsp;&emsp;    <a href="about.php" class=inactive >Обо&nbsp;мне</a>
+    <br>
+    <hr>
+</div>
+-->
+
+			<div style="margin-top: 10px;">
+				<p style="text-align:center; font-size:x-large">Билет <span id="number"></span></p>
+				
+				<img src="https://adinf.com/smostovoy/stat/q1/q_04.png" style="max-width:100%;">
+				
+				<img src="https://adinf.com/smostovoy/stat/q1/q_13.png" style="max-width:100%;">
+				
+				<img src="https://adinf.com/smostovoy/stat/q1/q_28.png" style="max-width:100%;">
+            </div>
+        </div>
+
+        <script>
+            (function () {
+                const el = document.getElementById('number');
+                const fmt = () =>
+                new Intl.DateTimeFormat('ru-RU', {
+                    timeZone: 'Europe/Moscow',
+                    hour: 'numeric',   // без ведущего нуля
+                    minute: '2-digit'  // минуты с ведущим нулём
+                })
+                .format(new Date())
+                .replace(/^0/, '')  // убираем ведущий 0 у часов
+                .replace(':', '');  // убираем двоеточие
+
+                el.textContent = fmt();        // вставили число, например 851
+                // Если нужно автообновление раз в минуту — раскомментируй:
+                // setInterval(() => el.textContent = fmt(), 60_000);
+            })();
+        </script>
+    </body>
+</html>
